@@ -20,7 +20,7 @@
         By implementing the Stock Adjustments with Approval Workflow module, your Odoo system will benefit from heightened inventory integrity, improved operational transparency, and a more controlled stock management process, ensuring your inventory records accurately reflect your physical stock.
     """,
     'category': 'Inventory/Inventory',
-    'license' : 'OPL-1',
+    'license' : 'LGPL-3',
     'version' : '18.0.1.0',
     'website' : "https://khichdiinfotech.com/",
     "support" : "contact@khichdiinfotech.com",
