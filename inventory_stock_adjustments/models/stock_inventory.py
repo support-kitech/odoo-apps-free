@@ -58,7 +58,7 @@ class StockInventory(models.Model):
         readonly=True)
     line_ids = fields.One2many(
         'stock.inventory.line', 'stock_inventory_id', string='Inventories',
-        copy=False, readonly=True,
+        copy=False,
     )
     partner_id = fields.Many2one(
         'res.partner', 'Inventoried Owner',
