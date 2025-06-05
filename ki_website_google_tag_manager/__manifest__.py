@@ -10,7 +10,8 @@ Includes Google Tag Manager HTML elements in the website metadata
     'website' : "https://khichdiinfotech.com/",
     "support" : "contact@khichdiinfotech.com",
     'author'  : "Khichdi InfoTech",
-    "license": "OPL-1",
+    "license": "LGPL-3",
+    'images': ['static/description/banner.png', 'static/description/icon.png'],
     'depends': [
         'website_sale',
     ],
