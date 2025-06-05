@@ -3,7 +3,7 @@
     'name': 'Google Tag Manager',
     'category': 'Website',
     'summary': 'Google Tag Manager - Odoo integration',
-    'version': '16.0.1.0',
+    'version': '18.0.1.0',
     'description': '''
 Includes Google Tag Manager HTML elements in the website metadata
     ''',
