@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="web_layout_gtag" name="Google Tag Manager: Web Layout" inherit_id="web.layout">
+        <xpath expr="//meta[@charset='utf-8']" position="before">
+            <!-- Google Tag Manager -->
+            <script t-if="website and website.google_tag_manager_key">
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','<t t-esc="website.google_tag_manager_key"/>');
+            </script>
+            <!-- End Google Tag Manager -->
+        </xpath>
+        <xpath expr="//body/*[1]" position="before">
+            <t t-if="request.httprequest.path == '/shop/confirmation'">
+                <script>
+                    gtag("event", "purchase", {
+                        transaction_id: "<t t-esc="website_sale_order.name"/>",
+                        affiliation: "<t t-esc="website_sale_order.website_id.name"/>",
+                        value: <t t-esc="website_sale_order.amount_untaxed"/>,
+                        tax: <t t-esc="website_sale_order.amount_tax"/> ,
+                        shipping: <t t-esc="website_sale_order.amount_delivery"/> ,
+                        currency: "<t t-esc="website_sale_order.currency_id.name"/>",
+                        items: [
+                            <t t-foreach="website_sale_order.website_order_line" t-as="line">
+                                {
+                                    item_id: ,
+                                    item_name:"<t t-esc="line.product_id.name"/>",
+                                    item_category:"<t t-esc="line.product_id.categ_id.name"/>",
+                                    currency:"<t t-esc="website_sale_order.currency_id.name"/>",
+                                    price:<t t-esc="line.price_total"/>,
+                                    quantity:<t t-esc="line.product_uom_qty"/>,
+                                },
+                            </t>
+                        ],
+                        send_to: ["<t t-esc="website.google_tag_manager_key"/>"]
+                    });
+                </script>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="website_layout" name="Google Tag Manager: Website Layout" inherit_id="website.layout">
+        <xpath expr="//div[@id='wrapwrap']" position="before">
+            <!-- Google Tag Manager (noscript) -->
+            <noscript t-if="website and website.google_tag_manager_key and not editable">
+                <iframe t-attf-src="https://www.googletagmanager.com/ns.html?id={{ website.google_tag_manager_key }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        </xpath>
+    </template>
+</odoo>
