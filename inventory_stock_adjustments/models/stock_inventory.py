@@ -206,7 +206,7 @@ class StockInventory(models.Model):
                     })
         if product_id:
             for x in product_id:
-                bom_ids = x.product_tmpl_id and 'bom_ids' in x.product_id.product_tmpl_id and x.product_tmpl_id.bom_ids
+                bom_ids = x.product_tmpl_id and 'bom_ids' in x.product_tmpl_id and x.product_tmpl_id.bom_ids
                 if not bom_ids or bom_ids.filtered(lambda bom: bom.type != 'phantom'):
                     self.write({
                         'state':'confirm',
