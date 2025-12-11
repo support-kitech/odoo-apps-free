@@ -13,7 +13,7 @@ Includes Google Tag Manager HTML elements in the website metadata
     "license": "LGPL-3",
     'images': ['static/description/banner.png', 'static/description/icon.png'],
     'depends': [
-        'website_sale',
+        'website_sale','website'
     ],
     'data': [
         'templates/website_layout.xml',
