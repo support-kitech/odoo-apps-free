@@ -31,7 +31,7 @@ class StockInventory(models.Model):
     lot_id = fields.Many2one(
         'stock.lot', 'Lot Number', index=True, check_company=True)
     package_id = fields.Many2one(
-        'stock.quant.package', 'Package',
+        'stock.package', 'Package',
         domain="[('location_id', '=', location_id)]",
         help='The package containing this quant', ondelete='restrict', check_company=True, index=True)        
     

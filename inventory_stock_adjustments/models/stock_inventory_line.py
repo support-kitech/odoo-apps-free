@@ -25,7 +25,7 @@ class StockInventoryLine(models.Model):
         'stock.lot', 'Lot Number',
         domain="[('product_id','=',product_id), ]", )
     package_id = fields.Many2one(
-        'stock.quant.package', 'Pack', index=True)
+        'stock.package', 'Pack', index=True)
     partner_id = fields.Many2one('res.partner', 'Owner')
     available_quantity = fields.Float(
         'Available Quantity',

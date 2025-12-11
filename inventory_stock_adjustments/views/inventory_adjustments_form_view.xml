@@ -3,7 +3,6 @@
     <record id="inventory_adjustments_search_view" model="ir.ui.view">
         <field name="name">inventory.adjustments.search_view</field>
         <field name="model">stock.inventory</field>
-        <field eval="10" name="priority"/>
         <field name="arch" type="xml">
             <search string="Stock Inventory">
                 <field name="name" />
@@ -35,7 +34,6 @@
     <record id="inventory_adjustments_form_view" model="ir.ui.view">
         <field name="name">Inventory Adjustments</field>
         <field name="model">stock.inventory</field>
-        <field eval="1" name="priority"/>
         <field name="arch" type="xml">
             <form>
                 <header>
