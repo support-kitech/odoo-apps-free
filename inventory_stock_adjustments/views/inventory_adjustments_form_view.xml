@@ -9,7 +9,7 @@
                 <field name="location_id" />
                 <filter name="my_inventory" string="My Inventory" domain="[('user_id', '=', uid)]"/>
                 <filter name="inventory_date" string="Inventory Date" date="date"/>
-                <group expand="0" string="Group By">
+                <group>
                     <filter string="Inventory Date" name="date"  context="{'group_by': 'date'}"/>
                     <filter string="Location" name="location_id"  context="{'group_by': 'location_id'}"/>
                     <filter string="State" name="state"  context="{'group_by': 'state'}"/>
