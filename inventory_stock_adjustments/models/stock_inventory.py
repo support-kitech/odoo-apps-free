@@ -228,14 +228,14 @@ class StockInventory(models.Model):
 
         users = self.env['res.users']
         if has_group:
-            users = has_group.users
+            users = has_group.user_ids
 
         message = _(
             "%s has requested approval for stock changes. Review it here: %s" % (self.env.user.name, url),
         )
         for user in users:
             if self.env.user.partner_id.id != user.partner_id.id:
-                channel_id = self.env['discuss.channel'].channel_get([self.env.user.partner_id.id, user.partner_id.id])
+                channel_id = self.env['discuss.channel']._get_or_create_chat([self.env.user.partner_id.id, user.partner_id.id])
                 channel_id.message_post(
                     # author_id=self.env.user.partner_id.id,
                     body=Markup(message),
@@ -251,7 +251,7 @@ class StockInventory(models.Model):
             "Your stock changes have been approved by %s. You can view them here: %s" % (self.env.user.name, url),
         )
         if self.env.user.partner_id.id != self.user_id.partner_id.id:
-            channel_id = self.env['discuss.channel'].channel_get([self.env.user.partner_id.id, self.user_id.partner_id.id])            
+            channel_id = self.env['discuss.channel']._get_or_create_chat([self.env.user.partner_id.id, self.user_id.partner_id.id])            
             channel_id.message_post(
                 body=Markup(message),
                 message_type='notification',

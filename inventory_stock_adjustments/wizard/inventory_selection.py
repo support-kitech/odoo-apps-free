@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, models, api
-
+from odoo import fields, models, api, _
+from odoo.exceptions import UserError
 
 class InventorySelection(models.TransientModel):
     _name = "inventory.selection"
@@ -47,6 +47,8 @@ class InventorySelection(models.TransientModel):
         }
 
     def confirm_add_products(self):
+        if self.stock_inventory_id.state != 'confirm':
+            raise UserError(_("You can only confirm stock inventory in confirm state"))
         create_stock_inventory_lines = []
         for line in self.selection_line_id:                
             if line.stock_inventory_line_id and line.lot_id:
@@ -59,7 +61,9 @@ class InventorySelection(models.TransientModel):
                     'prod_lot_id':line.prod_lot_id.id,
                     'inventory_quantity':line.quantity,
                 }))
-        self.stock_inventory_id.write({'line_ids':create_stock_inventory_lines})
+            self.stock_inventory_id.write({'line_ids':create_stock_inventory_lines})
+            if create_stock_inventory_lines:
+                self.stock_inventory_id.line_ids.filtered(lambda x: x.product_id == self.product_id and not x.prod_lot_id and x.lot_serial).unlink()
 
 
 class InventorySelectionLine(models.TransientModel):

@@ -10,9 +10,9 @@
                 <filter name="my_inventory" string="My Inventory" domain="[('user_id', '=', uid)]"/>
                 <filter name="inventory_date" string="Inventory Date" date="date"/>
                 <group>
-                    <filter string="Inventory Date" name="date"  context="{'group_by': 'date'}"/>
-                    <filter string="Location" name="location_id"  context="{'group_by': 'location_id'}"/>
-                    <filter string="State" name="state"  context="{'group_by': 'state'}"/>
+                    <filter string="Inventory Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
+                    <filter string="Location" name="location_id" domain="[]" context="{'group_by': 'location_id'}"/>
+                    <filter string="State" name="state" domain="[]" context="{'group_by': 'state'}"/>
                 </group>
             </search>
         </field>
