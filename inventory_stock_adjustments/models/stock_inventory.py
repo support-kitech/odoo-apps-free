@@ -181,6 +181,42 @@ class StockInventory(models.Model):
         if self.filter == 'partial':
             self.write({'state':'confirm',})
 
+    def _check_stock_moves_after_date(self, check_date):
+        error_lines = []
+        StockMoveLine = self.env['stock.move.line']
+
+        for inv in self:
+            for line in inv.line_ids:
+                domain = [
+                    ("state", "=", "done"),
+                    ("product_id", "=", line.product_id.id),
+                    ("date", ">", check_date),
+                    "|",
+                    ("location_id", "=", line.location_id.id),
+                    ("location_dest_id", "=", line.location_id.id),
+                ]
+                if line.prod_lot_id:
+                    domain.append(("lot_id", "=", line.prod_lot_id.id))
+
+                move = StockMoveLine.search(domain, limit=1)
+                if move:
+                    error_lines.append(
+                        "- Product: %s | Lot: %s | Location: %s"
+                        % (
+                            line.product_id.display_name,
+                            line.prod_lot_id.name if line.prod_lot_id else "N/A",
+                            line.location_id.display_name,
+                        )
+                    )
+                
+        if error_lines:
+            raise UserError(
+                _(
+                    "Stock moves have occurred after %s for the following inventory lines:\n\n%s"
+                    "\n\nPlease cancel the adjustment and create a new one considering the moves."
+                )
+                % (check_date.strftime("%Y-%m-%d %H:%M:%S"), "\n".join(error_lines))
+            )
 
     def prepare_stock_counting_lines(self, rec, product_id=None):
         domain = [('company_id', '=', self.company_id.id),
@@ -260,6 +296,7 @@ class StockInventory(models.Model):
         self.write({'state':'approved'})
 
     def action_done(self):
+        self._check_stock_moves_after_date(self.date)
         for line in self.line_ids:
             domain = [
                 ('company_id', '=', line.stock_inventory_id.company_id.id),
