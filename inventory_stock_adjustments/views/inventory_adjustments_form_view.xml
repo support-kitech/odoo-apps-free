@@ -60,6 +60,7 @@
                     <group>
                         <field name="date" string="Inventory Date" readonly="state in ('done', 'cancel')"/>
                         <field name="accounting_date" string="Force Accounting Date" readonly="state != 'draft'"/>
+                        <field name="sent_for_approval_date" readonly="1" force_save="1" invisible="state != 'draft'"/>
                         <field name="company_id" options="{'no_create': True}" />
                         <field name="product_id" readonly="state != 'draft'" domain="[('is_storable', '=', True), ('type','=','consu')]" invisible="filter not in ('product', 'product_owner')" required="filter in ('product', 'product_owner')" />
                         <field name="category_id" readonly="state != 'draft'" invisible="filter != 'category'" required="filter == 'category'" options="{'no_create': True}"/>

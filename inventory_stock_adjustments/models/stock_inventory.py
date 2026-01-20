@@ -72,6 +72,7 @@ class StockInventory(models.Model):
             " in case of automated inventory valuation."
             " If empty, the inventory date will be used.",
     )
+    sent_for_approval_date = fields.Datetime("Approval Sent Date")
     note = fields.Text(string="Important Note")
     
 
@@ -182,15 +183,16 @@ class StockInventory(models.Model):
             self.write({'state':'confirm',})
 
     def _check_stock_moves_after_date(self):
-        error_lines = []
         StockMoveLine = self.env['stock.move.line']
 
         for inv in self:
+            error_lines = []
+            check_date = inv.sent_for_approval_date or inv.date or fields.Datetime.now()
             for line in inv.line_ids:
                 domain = [
                     ("state", "=", "done"),
                     ("product_id", "=", line.product_id.id),
-                    ("date", ">", fields.Datetime.now()),
+                    ("date", ">", check_date),
                     "|",
                     ("location_id", "=", line.location_id.id),
                     ("location_dest_id", "=", line.location_id.id),
@@ -209,14 +211,14 @@ class StockInventory(models.Model):
                         )
                     )
 
-        if error_lines:
-            raise UserError(
-                _(
-                    "Stock moves have occurred after %s for the following inventory lines:\n\n%s"
-                    "\n\nPlease cancel the adjustment and create a new one considering the moves."
+            if error_lines:
+                raise UserError(
+                    _(
+                        "Stock moves have occurred after %s for the following inventory lines:\n\n%s"
+                        "\n\nPlease cancel the adjustment and create a new one considering the moves."
+                    )
+                    % (check_date.strftime("%Y-%m-%d %H:%M:%S"), "\n".join(error_lines))
                 )
-                % (check_date.strftime("%Y-%m-%d %H:%M:%S"), "\n".join(error_lines))
-            )
 
     def prepare_stock_counting_lines(self, rec, product_id=None):
         domain = [('company_id', '=', self.company_id.id),
@@ -278,7 +280,7 @@ class StockInventory(models.Model):
                     message_type='notification',
                     partner_ids=[user.partner_id.id],
                 )
-        self.write({'state':'wait_for_approval'})
+        self.write({'state':'wait_for_approval', 'sent_for_approval_date': fields.Datetime.now()})
 
     def action_approved(self):
         url = self._get_html_link(title=self.name)

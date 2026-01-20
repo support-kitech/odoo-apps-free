@@ -21,7 +21,7 @@
     """,
     'category': 'Inventory/Inventory',
     'license' : 'LGPL-3',
-    'version' : '19.0.1.1',
+    'version' : '19.0.1.2',
     'website' : "https://khichdiinfotech.com/",
     "support" : "contact@khichdiinfotech.com",
     'author'  : "Khichdi InfoTech",
