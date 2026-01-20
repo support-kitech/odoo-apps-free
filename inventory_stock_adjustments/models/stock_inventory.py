@@ -181,7 +181,7 @@ class StockInventory(models.Model):
         if self.filter == 'partial':
             self.write({'state':'confirm',})
 
-    def _check_stock_moves_after_date(self, check_date):
+    def _check_stock_moves_after_date(self):
         error_lines = []
         StockMoveLine = self.env['stock.move.line']
 
@@ -190,7 +190,7 @@ class StockInventory(models.Model):
                 domain = [
                     ("state", "=", "done"),
                     ("product_id", "=", line.product_id.id),
-                    ("date", ">", check_date),
+                    ("date", ">", fields.Datetime.now()),
                     "|",
                     ("location_id", "=", line.location_id.id),
                     ("location_dest_id", "=", line.location_id.id),
@@ -208,7 +208,7 @@ class StockInventory(models.Model):
                             line.location_id.display_name,
                         )
                     )
-                
+
         if error_lines:
             raise UserError(
                 _(
@@ -296,7 +296,7 @@ class StockInventory(models.Model):
         self.write({'state':'approved'})
 
     def action_done(self):
-        self._check_stock_moves_after_date(self.date)
+        self._check_stock_moves_after_date()
         for line in self.line_ids:
             domain = [
                 ('company_id', '=', line.stock_inventory_id.company_id.id),
