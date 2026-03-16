@@ -14,27 +14,54 @@
         </xpath>
         <xpath expr="//body/*[1]" position="before">
             <t t-if="request.httprequest.path == '/shop/confirmation'">
+                <!-- Google Analytics 4 purchase event -->
                 <script>
                     gtag("event", "purchase", {
                         transaction_id: "<t t-esc="website_sale_order.name"/>",
                         affiliation: "<t t-esc="website_sale_order.website_id.name"/>",
                         value: <t t-esc="website_sale_order.amount_untaxed"/>,
-                        tax: <t t-esc="website_sale_order.amount_tax"/> ,
-                        shipping: <t t-esc="website_sale_order.amount_delivery"/> ,
+                        tax: <t t-esc="website_sale_order.amount_tax"/>,
+                        shipping: <t t-esc="website_sale_order.amount_delivery"/>,
                         currency: "<t t-esc="website_sale_order.currency_id.name"/>",
                         items: [
                             <t t-foreach="website_sale_order.website_order_line" t-as="line">
                                 {
-                                    item_id: <t t-esc="line.id"/>,
-                                    item_name:"<t t-esc="line.product_id.name"/>",
-                                    item_category:"<t t-esc="line.product_id.categ_id.name"/>",
-                                    currency:"<t t-esc="website_sale_order.currency_id.name"/>",
-                                    price:<t t-esc="line.price_total"/>,
-                                    quantity:<t t-esc="line.product_uom_qty"/>,
+                                    item_id: "<t t-esc="line.product_id.default_code or line.product_id.id"/>",
+                                    item_name: "<t t-esc="line.product_id.name"/>",
+                                    item_category: "<t t-esc="line.product_id.categ_id.name"/>",
+                                    currency: "<t t-esc="website_sale_order.currency_id.name"/>",
+                                    price: <t t-esc="line.price_total"/>,
+                                    quantity: <t t-esc="line.product_uom_qty"/>
                                 },
                             </t>
                         ],
                         send_to: ["<t t-esc="website.google_tag_manager_key"/>"]
+                    });
+                </script>
+
+                <!-- Google Tag Manager purchase event (dataLayer) -->
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: "purchase",
+                        transaction_id: "<t t-esc="website_sale_order.name"/>",
+                        affiliation: "<t t-esc="website_sale_order.website_id.name"/>",
+                        value: <t t-esc="website_sale_order.amount_untaxed"/>,
+                        tax: <t t-esc="website_sale_order.amount_tax"/>,
+                        shipping: <t t-esc="website_sale_order.amount_delivery"/>,
+                        currency: "<t t-esc="website_sale_order.currency_id.name"/>",
+                        items: [
+                            <t t-foreach="website_sale_order.website_order_line" t-as="line">
+                                {
+                                    item_id: "<t t-esc="line.product_id.default_code or line.product_id.id"/>",
+                                    item_name: "<t t-esc="line.product_id.name"/>",
+                                    item_category: "<t t-esc="line.product_id.categ_id.name"/>",
+                                    currency: "<t t-esc="website_sale_order.currency_id.name"/>",
+                                    price: <t t-esc="line.price_total"/>,
+                                    quantity: <t t-esc="line.product_uom_qty"/>
+                                },
+                            </t>
+                        ]
                     });
                 </script>
             </t>
