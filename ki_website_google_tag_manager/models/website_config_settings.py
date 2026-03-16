@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2025 Khichdi InfoTech
-
-import json
+# Copyright © 2025 Khichdi InfoTech (https://khichdiinfotech.com)
 from odoo import api, fields, models
 
 

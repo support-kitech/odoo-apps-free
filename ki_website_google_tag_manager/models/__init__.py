@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 Pierre Faniel
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+# Copyright © 2025 Khichdi InfoTech (https://khichdiinfotech.com)
 
 from . import website
 from . import website_config_settings
