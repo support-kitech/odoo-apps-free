@@ -48,7 +48,7 @@
                         affiliation: "<t t-esc="website_sale_order.website_id.name"/>",
                         value: <t t-esc="website_sale_order.amount_untaxed"/>,
                         tax: <t t-esc="website_sale_order.amount_tax"/>,
-                        shipping: <t t-esc="website_sale_order.amount_delivery"/>
+                        shipping: <t t-esc="website_sale_order.amount_delivery"/>,
                         currency: "<t t-esc="website_sale_order.currency_id.name"/>",
                         items: [
                             <t t-foreach="website_sale_order.website_order_line" t-as="line">
