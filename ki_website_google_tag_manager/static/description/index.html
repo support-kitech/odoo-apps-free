@@ -1,23 +1,27 @@
 <section class="oe_container" style="font-family: 'Montserrat', 'Odoo Unicode Support Noto', sans-serif;">
-  <div class="row mt-3">
-
-    <ul class="offset-3 col-6 text-left d-md-none list-unstyled pt-5">
-      <li class="border-top border-bottom"><div class="my-2 mx-sm-2" style="color: #6F649A;"><i class="fa fa-check-circle"></i> Community</div></li>
-      <li class="border-bottom"><div class="my-2 mx-sm-2" style="color: #694D65;"><i class="fa fa-check-circle"></i> Enterprise</div></li>
-    </ul>
-  
-    <div class="col-12 text-right d-none d-md-block">
-      <span class="m-2" style="float: right; background-color: #694D65; border-color: #694D65; color: #FFFFFF; padding: 5px 18px; border-radius: 15px 0 15px 0; opacity: 1;"><i class="fa fa-check"></i> Enterprise</span>
-      <span class="m-2" style="float: right; background-color: #6F649A; border-color: #6F649A; color: #FFFFFF; padding: 5px 18px; border-radius: 15px 0 15px 0; opacity: 1;"><i class="fa fa-check"></i> Community</span>
+  <div class="row mt-3 align-items-center">
+    <div class="col-12 col-md-6">
+      <span class="badge badge-pill mr-2" style="background-color:#714B67; color:#FFF; padding:6px 16px;">
+        <i class="fa fa-check" aria-hidden="true"></i> Community
+      </span>
+      <span class="badge badge-pill" style="background-color:#4F46E5; color:#FFF; padding:6px 16px;">
+        <i class="fa fa-check" aria-hidden="true"></i> Enterprise
+      </span>
     </div>
-
   </div>
 </section>
 
 <section class="oe_container" style="font-family: 'Montserrat', 'Odoo Unicode Support Noto', sans-serif;">
-  <div class="row oe_spaced">       
-    <div class="offset-xl-1 col-lg-9 d-flex d-column mt-5 mt-lg-0">
-      <h2 class="h1 align-self-center text-center" style="color: #154577; font-weight: 900; font-family: 'Montserrat', 'Odoo Unicode Support Noto', sans-serif;">Integrate Google Tag Manager script to your Odoo website</h2>
+  <div class="row oe_spaced">
+    <div class="offset-xl-1 col-xl-10 col-lg-12 mt-5 text-center">
+      <h2 class="h1" style="color:#111827; font-weight:800;">
+        Google Tag Manager integration for Odoo Website
+      </h2>
+      <p class="mt-3" style="color:#4B5563; font-size:1.05rem; max-width:720px; margin:0 auto;">
+        This module connects your Odoo website with Google Tag Manager by injecting your GTM container
+        on public pages. You can manage marketing and analytics tags centrally from GTM without touching
+        Odoo templates or custom code.
+      </p>
     </div>
   </div>
 </section>
@@ -25,304 +29,174 @@
 <section class="oe_container" style="font-family: 'Montserrat', 'Odoo Unicode Support Noto', sans-serif;">
   <div class="row oe_spaced">
     <div class="col-12">
-  <div class="h2 text-left ml8" style="color: #1845c1;"><i class="fa fa-newspaper-o mr8"></i>Description</div>
-  <div class="media p-2 pt-4 overflow-hidden">
-    <div class="py-2 px-md-5 lead w-100" style="line-height: 2.5rem;"><h3 style="text-transform: uppercase; color: #154577;">Google Tag Manager</h3>
-  <p class="bg-light mb-4 p-4" style="border-radius: 15px;">
-    Google Tag Manager (GTM) is a free tool that helps marketers easily add and manage website tracking codes (called tags) without editing the site's code.
-  </p>  
-  <p class="mb-4 p-4" style="border-radius: 15px;">  
-    It lets you connect your website to Google Analytics, Google Ads, and other marketing services, making it faster and simpler to track data and run campaigns.
-  </p>
-
-  <h3 style="text-transform: uppercase; color: #154577;">How to set up Google Tag Manager</h3>
-  <p>Setting up Google Tag Manager (GTM) with your Odoo website is straightforward:</p>
-  <ol>
-    <li><p><strong>Create your GTM account and container</strong> at <a href="https://tagmanager.google.com/">tagmanager.google.com</a> to get your unique <strong>container ID</strong>.</p></li>
-    <li><p><strong>Add this container ID to your Odoo website's settings</strong> (Odoo handles injecting the GTM script automatically).</p></li>
-    <li><p>Finally, <strong>manage all your tracking tags directly from the GTM interface</strong>. For detailed tag setup, refer to the Google manual <a href="https://support.google.com/tagmanager/answer/6103696">here</a>.</p></li>
-  </ol>
-</div>
-  </div>
+      <div class="h2 text-left ml8" style="color:#714B67;">
+        <i class="fa fa-newspaper-o mr8" aria-hidden="true"></i>Overview
+      </div>
+      <div class="media p-2 pt-4 overflow-hidden">
+        <div class="py-2 px-md-5 w-100" style="line-height:2rem;">
+          <h3 style="text-transform:uppercase; color:#111827; font-size:1.25rem; font-weight:700;">
+            What this module does
+          </h3>
+          <p class="mb-3" style="background-color:#F9FAFB; border-radius:12px; padding:18px;">
+            The Google Tag Manager (GTM) module adds your GTM container to the Odoo website layout and
+            sends structured ecommerce data for orders placed through the shop. Once configured, you can
+            create and publish tags from the GTM interface without editing Odoo views.
+          </p>
+          <p class="mb-0">
+            It is designed for digital marketers, agencies, and Odoo implementers who want a flexible way
+            to deploy tracking pixels, analytics tags, and other marketing scripts while keeping the
+            Odoo website clean and maintainable.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-
-<section class="oe_container" style="font-family: 'Montserrat', 'Odoo Unicode Support Noto', sans-serif;">
+<section class="oe_container" style="font-family:'Montserrat', 'Odoo Unicode Support Noto', sans-serif;">
   <div class="row oe_spaced">
     <div class="col-12">
-  <div class="h2 text-left ml8" style="color: #1845c1;"><i class="fa fa-check-square-o mr8"></i>Benefits</div>
-  <div class="s_features_grid p-2 pt-4 o_colored_level" data-snippet="s_features_grid" data-name="Features Grid" style="border-color: #1845c1 !important; border-radius: 0 15px 0 0; border-top-style: solid; border-right-style: solid; background-color: #67d1f814;">
-    <div class="container p-0">
-      <div class="row px-md-5">
-        <div class="col-lg-6 s_col_no_bgcolor pb24">
-          <div class="row">
-            <div class="col-lg-12 o_colored_level" data-name="Box">
-              <i class="s_features_grid_icon fa fa-2x float-left mr32 mr-3 bg-warning fa-code rounded-circle" style="line-height:5rem; height:5rem; width:5rem; text-align:center; float:left;"></i>
-              <div class="s_features_grid_content">
-                <div class="h4 pt-2">No Code</div>
-                <p>Activates tracking tags without coding</p>
-              </div>
+      <div class="h2 text-left ml8" style="color:#714B67;">
+        <i class="fa fa-check-square-o mr8" aria-hidden="true"></i>Main Features
+      </div>
+      <div class="p-2 pt-4 o_colored_level" style="border-radius:12px; background-color:#F5F3FF;">
+        <div class="container p-0">
+          <div class="row px-md-5">
+            <div class="col-md-6 mb-4">
+              <h4 style="font-size:1.05rem; font-weight:600; color:#111827;">Simple GTM container setup</h4>
+              <p style="margin-bottom:0; color:#4B5563;">
+                Add your Google Tag Manager container ID once in Website settings and let the module
+                include the script on all public website pages.
+              </p>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-6 s_col_no_bgcolor pb24">
-          <div class="row">
-            <div class="col-lg-12 o_colored_level" data-name="Box">
-              <i class="s_features_grid_icon fa fa-2x float-left mr32 mr-3 bg-warning fa-globe rounded" style="line-height:5rem; height:5rem; width:5rem; text-align:center; float:left;"></i>
-              <div class="s_features_grid_content">
-                <div class="h4 pt-2">Multi</div>
-                <p>Multi-Website support</p>
-              </div>
+            <div class="col-md-6 mb-4">
+              <h4 style="font-size:1.05rem; font-weight:600; color:#111827;">Ecommerce purchase events</h4>
+              <p style="margin-bottom:0; color:#4B5563;">
+                Automatically pushes purchase data (order, amounts, currency and items) on the
+                confirmation page so that you can build conversion tracking in GTM.
+              </p>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-6 s_col_no_bgcolor pb24">
-          <div class="row">
-            <div class="col-lg-12 o_colored_level" data-name="Box">
-              <i class="s_features_grid_icon fa fa-2x float-left mr32 mr-3 bg-warning fa-support rounded-circle" style="line-height:5rem; height:5rem; width:5rem; text-align:center; float:left;"></i>
-              <div class="s_features_grid_content">
-                <div class="h4 pt-2">Support</div>
-                <p>Free 30 days support and 180 days bug-fixing</p>
-              </div>
+            <div class="col-md-6 mb-4">
+              <h4 style="font-size:1.05rem; font-weight:600; color:#111827;">Multi‑website compatible</h4>
+              <p style="margin-bottom:0; color:#4B5563;">
+                Works with Odoo multi‑website. Each website can use its own GTM container ID if needed.
+              </p>
+            </div>
+            <div class="col-md-6 mb-4">
+              <h4 style="font-size:1.05rem; font-weight:600; color:#111827;">No theme customization needed</h4>
+              <p style="margin-bottom:0; color:#4B5563;">
+                The integration extends the standard website layout, so you do not have to modify
+                theme templates or add custom code snippets.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-    </div>
-  </div>
 </section>
 
-<section class="oe_container" style="font-family: 'Montserrat', 'Odoo Unicode Support Noto', sans-serif;">
+<section class="oe_container" style="font-family:'Montserrat','Odoo Unicode Support Noto',sans-serif; line-height:2rem;">
   <div class="row oe_spaced">
     <div class="col-12">
-<section class="oe_container" style="font-family: 'Montserrat','Odoo Unicode Support Noto',sans-serif; line-height: 2rem;">
-  <div class="h2 text-left ml8 pt-5" style="color: #1845c1;"><i class="fa fa-gears mr8"></i>Configuration</div>
-  <div class="media p-2 pt-4 border-top border-right" style="border-color: #1845c1 !important; border-radius: 0 15px 0 0;">
-    <div class="media-body">
-      
-      <div class="h3 mt-5 p-2 py-4 px-md-5">Adding a container ID</div>
-      <div class="py-2 px-md-5" style="line-height: 2rem;">
-        Go to the menu "<b>Website</b>" - "<b>Configuration</b>" - "<b>Settings</b>" and activate the "<b>Google Tag Manager</b>" option.
-        Then enter <b>Container ID</b>.
+      <div class="h2 text-left ml8 pt-5" style="color:#714B67;">
+        <i class="fa fa-gears mr8" aria-hidden="true"></i>Configuration
       </div>
-      <div class="text-center my-5 mx-md-5">
-        <img src="google-tag-manager.png" class="w-100 img-fluid rounded shadow-lg border" alt="Activate Google Tag Manager in Odoo 18.0">
-      </div>
+      <div class="media p-2 pt-4" style="border-radius:12px; border:1px solid #E5E7EB;">
+        <div class="media-body">
+          <div class="h3 mt-3 p-2 px-md-5" style="font-size:1.25rem; font-weight:600;">Adding your GTM container ID</div>
+          <div class="py-2 px-md-5">
+            <ol style="padding-left:1.25rem; color:#4B5563;">
+              <li>Open the menu <b>Website</b> ▸ <b>Configuration</b> ▸ <b>Settings</b>.</li>
+              <li>Locate the <b>Google Tag Manager</b> option in the Website section.</li>
+              <li>Enable the option and paste your GTM <b>Container ID</b> (for example: <code>GTM-XXXXXXX</code>).</li>
+              <li>Save the settings and refresh your public website pages.</li>
+            </ol>
+          </div>
+          <div class="text-center my-4 mx-md-5">
+            <img src="google-tag-manager.png"
+                 class="w-100 img-fluid rounded shadow-sm border"
+                 alt="Configure Google Tag Manager in Odoo website settings">
+          </div>
 
-      <div class="h3 p-2 pl-md-5">The GTM script</div>
-      <div class="py-2 px-md-5" style="line-height: 2rem;">The GTM script will be added to all web pages.</div>
-      <div class="text-center my-5 mx-md-5">
-        <img src="gtm-script.png" class="w-100 img-fluid rounded shadow-lg border" alt="GTM script in odoo 16.0 website">
+          <div class="h3 p-2 px-md-5" style="font-size:1.25rem; font-weight:600;">How the GTM script is injected</div>
+          <div class="py-2 px-md-5">
+            <p style="margin-bottom:0; color:#4B5563;">
+              After configuration, the module automatically injects the standard Google Tag Manager code
+              into the website layout. The GTM script and the corresponding <code>noscript</code> iframe are
+              included on all public pages, following Google’s recommended placement.
+            </p>
+          </div>
+          <div class="text-center my-4 mx-md-5">
+            <img src="gtm-script.png"
+                 class="w-100 img-fluid rounded shadow-sm border"
+                 alt="Example of Google Tag Manager script injected in the Odoo website">
+          </div>
+        </div>
       </div>
-
     </div>
   </div>
 </section>
-    </div>
-  </div>
-</section>
 
-<section class="oe_container" style="font-family: 'Montserrat', 'Odoo Unicode Support Noto', sans-serif;">
+<section class="oe_container" style="font-family:'Montserrat','Odoo Unicode Support Noto',sans-serif; line-height:2rem;">
   <div class="row oe_spaced">
     <div class="col-12">
-<section class="oe_container" style="font-family: 'Montserrat','Odoo Unicode Support Noto',sans-serif; line-height: 2rem;">
-  <div class="h2 text-left ml8 pt-5" style="color: #1845c1;"><i class="fa fa-bug mr8"></i>Testing GTM Integration</div>
-  <div class="media p-2 pt-4 border-top border-right" style="border-color: #1845c1 !important; border-radius: 0 15px 0 0;">
-    <div class="media-body">
-      <div class="h3 mt-5 p-2 px-md-5">Important Testing Notes</div>
-      <div class="py-2 px-md-5" style="line-height: 2rem;">
-        <p>Because the GTM script is designed not to fire for internal Odoo users, keep these testing tips in mind:</p>
-        <ul class="m-0 py-2">
-          <li>You won't see the GTM script if you're logged into Odoo with internal user access rights.</li>
-          <li>To properly test the Google Tag Manager script, **log out of Odoo**, or use an **incognito/private Browse window**, or use a **different web browser**.</li>
-        </ul>
+      <div class="h2 text-left ml8 pt-5" style="color:#714B67;">
+        <i class="fa fa-bug mr8" aria-hidden="true"></i>Testing your GTM setup
+      </div>
+      <div class="media p-2 pt-4" style="border-radius:12px; border:1px solid #E5E7EB;">
+        <div class="media-body py-2 px-md-5">
+          <h3 class="mt-3" style="font-size:1.25rem; font-weight:600;">Recommended testing steps</h3>
+          <p style="color:#4B5563;">
+            Use these checks to confirm that your Google Tag Manager container and purchase events are
+            working as expected:
+          </p>
+          <ul class="m-0 py-1" style="color:#4B5563;">
+            <li>Open your website in an incognito / private browser window or a browser where you are not logged into Odoo.</li>
+            <li>Use the GTM <b>Preview</b> mode or a browser extension such as <b>Tag Assistant</b> to see that the container loads.</li>
+            <li>Place a test order in the online shop and verify that a <code>purchase</code> event is received in GTM with order and item details.</li>
+          </ul>
+          <div class="text-center my-4 mx-md-5">
+            <img src="gtm-purchase.png"
+                 class="w-100 img-fluid rounded shadow-sm border"
+                 alt="Example of purchase event data sent from Odoo website">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-    </div>
-  </div>
-</section>
 
-
-<section id="services" class="mt-5" style="border-radius:16px; border:1px solid #EBEEF2; padding:60px 40px">
-  <div class="text-center mt-4">
-    <h3 class="mb-0"
-      style="color:#000; text-align:center; font-family:Montserrat; font-size:40px; font-style:normal; font-weight:700; line-height:normal; text-transform:uppercase; padding-bottom:50px">
-      Our Services</h3>
-  </div>
-  <div class="row mt-3">
-    <div class="col-lg-3 col-sm-12 mb-3">
-      <span style="text-decoration:none">
-        <div class="btn-lg btn-block p-4 mb-2 d-flex flex-column justify-content-center align-items-center"
-          style="font-size:25px; font-weight:bold; background-color:#FFE2E5; margin:auto; border-radius:8px">
-          <div class="d-flex justify-content-center align-items-center"
-            style="background-color:#FA5A7D; border-radius:50%; height:56px; width:56px">
-            <img src="//apps.odoocdn.com/apps/assets/18.0/base_accounting_kit/assets/icons/gear.svg?45356ce"
-              class="img-responsive" height="28px" width="28px">
-          </div>
-          <span style="font-size:18px; color:var(--text-color); font-weight:600"> Odoo Customization</span>
+<section class="mt-5" style="font-family:'Montserrat','Odoo Unicode Support Noto',sans-serif;">
+  <div class="container" style="border-radius:16px; border:1px solid #E5E7EB; padding:40px 24px;">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <h3 style="font-size:1.5rem; font-weight:700; color:#111827;">
+          Odoo services by Khichdi InfoTech
+        </h3>
+        <p style="margin-top:12px; color:#4B5563;">
+          Khichdi InfoTech helps businesses get more value from Odoo with implementation,
+          customization and long‑term support. We focus on practical, maintainable solutions
+          that fit your processes.
+        </p>
+        <p style="margin-top:12px; color:#4B5563;">
+          If you need assistance with this module, new features, or other Odoo projects,
+          our team is ready to help.
+        </p>
+        <div class="mt-4">
+          <h4 style="font-size:1rem; font-weight:600; color:#6B7280; margin-bottom:4px;">Phone</h4>
+          <p style="margin:0; color:#111827;">+91 99747 68675</p>
         </div>
-      </span>
-    </div>
-    <div class="col-lg-3 col-sm-12 mb-3">
-      <span style="text-decoration:none">
-        <div class="btn-lg btn-block p-4 mb-2 d-flex flex-column justify-content-center align-items-center"
-          style="font-size:25px; font-weight:bold; background-color:#FFF4DE; margin:auto; border-radius:8px">
-          <div class="d-flex justify-content-center align-items-center"
-            style="background-color:#FF947A; border-radius:50%; height:56px; width:56px">
-            <img src="//apps.odoocdn.com/apps/assets/18.0/base_accounting_kit/assets/icons/wrench-icon.svg?45356ce"
-              class="img-responsive" height="28px" width="28px">
-          </div>
-          <span style="font-size:18px; color:var(--text-color); font-weight:600"> Odoo Implementation</span>
-        </div>
-      </span>
-    </div>
-    <div class="col-lg-3 col-sm-12 mb-3">
-      <span style="text-decoration:none">
-        <div class="btn-lg btn-block p-4 mb-2 d-flex flex-column justify-content-center align-items-center"
-          style="font-size:25px; font-weight:bold; background-color:#DCFCE7; margin:auto; border-radius:8px">
-          <div class="d-flex justify-content-center align-items-center"
-            style="background-color:#3CD856; border-radius:50%; height:56px; width:56px">
-            <img src="//apps.odoocdn.com/apps/assets/18.0/base_accounting_kit/assets/icons/life-ring-icon.svg?45356ce"
-              class="img-responsive" height="28px" width="28px">
-          </div>
-          <span style="font-size:18px; color:var(--text-color); font-weight:600">Odoo Support</span>
-        </div>
-      </span>
-    </div>
-    <div class="col-lg-3 col-sm-12 mb-3">
-      <span style="text-decoration:none">
-        <div class="btn-lg btn-block p-4 mb-2 d-flex flex-column justify-content-center align-items-center"
-          style="font-size:25px; font-weight:bold; background-color:#F3E8FF; margin:auto; border-radius:8px">
-          <div class="d-flex justify-content-center align-items-center"
-            style="background-color:#BF83FF; border-radius:50%; height:56px; width:56px">
-            <img src="//apps.odoocdn.com/apps/assets/18.0/base_accounting_kit/assets/icons/arrows-repeat.svg?45356ce"
-              class="img-responsive" height="28px" width="28px">
-          </div>
-          <span style="font-size:18px; color:var(--text-color); font-weight:600">Odoo Migration</span>
-        </div>
-      </span>
-    </div>
-    <div class="col-lg-3 col-sm-12 mb-3">
-      <span style="text-decoration:none">
-        <div class="btn-lg btn-block p-4 mb-2 d-flex flex-column justify-content-center align-items-center"
-          style="font-size:25px; font-weight:bold; background-color:#F1F9FF; margin:auto; border-radius:8px">
-          <div class="d-flex justify-content-center align-items-center"
-            style="background-color:#01649C; border-radius:50%; height:56px; width:56px">
-            <img
-              src="//apps.odoocdn.com/apps/assets/18.0/base_accounting_kit/assets/icons/puzzle-piece-icon.svg?45356ce"
-              class="img-responsive" height="28px" width="28px">
-          </div>
-          <span style="font-size:18px; color:var(--text-color); font-weight:600">Odoo Integration</span>
-        </div>
-      </span>
-    </div>
-    <div class="col-lg-3 col-sm-12 mb-3">
-      <span style="text-decoration:none">
-        <div class="btn-lg btn-block p-4 mb-2 d-flex flex-column justify-content-center align-items-center"
-          style="font-size:25px; font-weight:bold; background-color:#EDF8ED; margin:auto; border-radius:8px">
-
-          <div class="d-flex justify-content-center align-items-center"
-            style="background-color:#69CC70; border-radius:50%; height:56px; width:56px">
-            <img src="//apps.odoocdn.com/apps/assets/18.0/base_accounting_kit/assets/icons/odoo-consultancy.svg?45356ce"
-              class="img-responsive" height="28px" width="28px">
-          </div>
-          <span style="font-size:18px; color:var(--text-color); font-weight:600">Odoo Consultancy</span>
-        </div>
-      </span>
-    </div>
-    <div class="col-lg-3 col-sm-12 mb-3">
-      <span style="text-decoration:none">
-        <div class="btn-lg btn-block p-4 mb-2 d-flex flex-column justify-content-center align-items-center"
-          style="font-size:25px; font-weight:bold; background-color:#F1F6FF; margin:auto; border-radius:8px">
-
-          <div class="d-flex justify-content-center align-items-center"
-            style="background-color:#2E4556; border-radius:50%; height:56px; width:56px">
-            <img src="//apps.odoocdn.com/apps/assets/18.0/base_accounting_kit/assets/icons/odoo-licencing.svg?45356ce"
-              class="img-responsive" height="28px" width="28px">
-          </div>
-          <span style="font-size:18px; color:var(--text-color); font-weight:600">Odoo Licensing</span>
-        </div>
-      </span>
-    </div>
-    <div class="col-lg-3 col-sm-12 mb-3">
-      <span style="text-decoration:none">
-        <div class="btn-lg btn-block p-4 mb-2 d-flex flex-column justify-content-center align-items-center"
-          style="font-size:25px; font-weight:bold; background-color:#FAF6EA; margin:auto; border-radius:8px">
-
-          <div class="d-flex justify-content-center align-items-center"
-            style="background-color:#FCD12C; border-radius:50%; height:56px; width:56px">
-            <img src="//apps.odoocdn.com/apps/assets/18.0/base_accounting_kit/assets/icons/hire-odoo.svg?45356ce"
-              class="img-responsive" height="28px" width="28px">
-          </div>
-          <span style="font-size:18px; color:var(--text-color); font-weight:600">Hire Odoo Developer</span>
-        </div>
-      </span>
-    </div>
-  </div>
-</section>
-
-<section class="mt-5 bg-transparent">
-  <div class="container">
-    <div class="row shadow mt-5 bg-white" style="border-radius:20px">
-      <div class="col-lg-6 col-sm-12 ps-5" style="text-align:left">
-        <div class="mt-5">
-          <img src="https://odoocdn.com/openerp_website/static/src/img/assets/svg/odoo_logo.svg" style="width:50%">
-        </div>
-        <div class="row mt-5">
-          <div class="rectangle"
-            style="text-align:right; height:14px; width:2px; background-color:#3497DB; margin-top:10px; margin-left:21px">
-          </div>
-          <div class="col-10 mb-3">
-            <h2 class="text-left" style="text-align:left; font-size:30px; color:#111827; margin-left:-6px">
-              Get Support, For Free! </h2>
-          </div>
-        </div>
-        <h2 class="text-left" style="font-weight:bold; font-size:35px; color:#111827"> 60 Days
-          Free Support </h2>
-        <br>
-        <p class="detail-box lh-base" style="font-size:20px; color:#111827">
-          In case any bugs or issue (Except data recovery)</p>
-        <p class="detail-box lh-base" style="font-size:16px; color:#111827">
-          At Khichdi InfoTech we offer end to end solution for Odoo services. Which
-          includes analysis &amp; consultation on the workflows and integration
-          part. </p>
-        <div class="container mt-5 ps-0">
-          <div class="row">
-            <div class="col-2">
-              <img src="//apps.odoocdn.com/apps/assets/18.0/odoo_website_wallet/assets/call.png" width="50" height="50">
-            </div>
-            <div class="col-8" style="text-align:left">
-              <h4 style="font-size:18px; font-weight:700; margin:0 0 10px 0; color:#7D7D7D">
-                Have Any Question ?</h4>
-              <p style="color:black">+91-9974768675</p>
-            </div>
-          </div>
-
+        <div class="mt-3">
+          <h4 style="font-size:1rem; font-weight:600; color:#6B7280; margin-bottom:4px;">Email</h4>
+          <p style="margin:0; color:#111827;">
+            Sales: contact@khichdiinfotech.com<br>
+            Support: support@khichdiinfotech.com
+          </p>
         </div>
       </div>
-      <div class="col-lg-6 col-lg-6 text-center pb-5">
-        <img src="//apps.odoocdn.com/apps/assets/18.0/odoo_website_wallet/assets/support_image.gif"
-          style="width:75%">
-        <br>
-        <div class="row">
-          <div class="row mt-5 mb-5">
-            <div class="col-2">
-              <img src="//apps.odoocdn.com/apps/assets/18.0/odoo_website_wallet/assets/mail.png" width="50" height="50">
-            </div>
-            <div class="col-8" style="text-align:left">
-              <h4 style="font-size:18px; font-weight:700; margin:0 0 10px 0; color:#7D7D7D">
-                Write Email</h4>
-              <p style="color:black"> Sales : contact@khichdiinfotech.com<br>
-                Support : support@khichdiinfotech.com</p>
-            </div>
-          </div>
-        </div>
+      <div class="col-lg-6 col-sm-12 mt-4 mt-lg-0 text-center">
+        <img src="banner.png" class="img-fluid" alt="Khichdi InfoTech Odoo services">
       </div>
     </div>
   </div>
