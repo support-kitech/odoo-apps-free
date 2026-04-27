@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template inherit_id="website_sale.product" id="whatsapp_inquiry" name="Product WhatsApp Inquiry">
-        <xpath expr="//div[@id='add_to_cart_wrap']" position="after">
+        <xpath expr="//t[@t-call='website_sale.cta_wrapper']" position="after">
             <div id="whatsapp_inquiry_wrap" class="d-inline-flex align-items-center mb-2 me-auto" t-if="bool(website.whatsapp_number)">
                 <a role="button" id="whatsapp_inquiry_link" t-att-href="'/whatsapp/inquiry/%s' % (product_variant.id)" class="btn btn-primary flex-grow-1 kh-whatsapp-inquiry-btn" target="_blank">
                     <i class="fa fa-whatsapp me-2"/>
