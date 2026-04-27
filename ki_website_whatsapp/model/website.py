@@ -1,3 +1,4 @@
+# Copyright © 2025 Khichdi InfoTech (https://khichdiinfotech.com)
 from odoo import fields, models
 from urllib.parse import quote_plus
 

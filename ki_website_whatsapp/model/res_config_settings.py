@@ -1,3 +1,4 @@
+# Copyright © 2025 Khichdi InfoTech (https://khichdiinfotech.com)
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 
