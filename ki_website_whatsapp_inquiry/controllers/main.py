@@ -1,3 +1,4 @@
+# Copyright © 2025 Khichdi InfoTech (https://khichdiinfotech.com)
 import werkzeug
 from odoo import http
 from odoo.http import request
