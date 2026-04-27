@@ -1,5 +1,6 @@
+# Copyright © 2025 Khichdi InfoTech (https://khichdiinfotech.com)
 {
-    'name': "Website WhatsApp Inquiry",
+    'name': "Website WhatsApp Product Inquiry",
     'summary': "WhatsApp product inquiry button on Odoo product pages with prefilled message.",
     'version': '19.0.1.0.0',
     'category': 'Extra Tools',
