@@ -1,0 +1,27 @@
+.kh_whatsapp_web {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #25d366;
+    color: #ffffff;
+    font-size: 30px;
+    z-index: 1000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.kh_whatsapp_web:hover,
+.kh_whatsapp_web:focus {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.kh-whatsapp-icon {
+    color: inherit;
+    line-height: 1;
+}
