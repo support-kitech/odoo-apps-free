@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_whatsapp_icon" name="Website Floating WhatsApp Icon" inherit_id="portal.frontend_layout">
+        <xpath expr="//div[@id='wrapwrap']" position="inside">
+            <t t-if="bool(website.whatsapp_number)">
+                <a t-att-href="website._get_whatsapp_link()" class="kh_whatsapp_web" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-whatsapp kh-whatsapp-icon"/>
+                </a>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

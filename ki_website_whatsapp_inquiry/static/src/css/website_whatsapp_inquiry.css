@@ -1,0 +1,12 @@
+.kh-whatsapp-inquiry-btn {
+    background-color: #25d366;
+    border-color: #25d366;
+    color: #111111;
+}
+
+.kh-whatsapp-inquiry-btn:hover,
+.kh-whatsapp-inquiry-btn:focus {
+    background-color: #1fb958;
+    border-color: #1fb958;
+    color: #111111;
+}
