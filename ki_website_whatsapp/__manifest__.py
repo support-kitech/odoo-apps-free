@@ -1,3 +1,4 @@
+# Copyright © 2025 Khichdi InfoTech (https://khichdiinfotech.com)
 {
     'name': "Website WhatsApp",
     'summary': "Floating WhatsApp chat button for Odoo Website with configurable mobile number.",
