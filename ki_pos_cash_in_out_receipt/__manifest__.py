@@ -2,8 +2,8 @@
 {
     "name": "POS Cash In/Out Multi Currency & Receipt",
     "summary": "POS multi-currency cash in/out with receipt printing for Odoo 18 Enterprise.",
-    "version": "18.0.1.0.3",
-    "category": "Point of Sale",
+    "version": "18.0.1.0.0",
+    "category": "Sales/Point of Sale",
     "description": """
 POS Cash In/Out Multi Currency & Receipt
 ========================================
@@ -21,8 +21,6 @@ This free module adds focused Point of Sale enhancements for Odoo 18 Enterprise:
     "website": "https://www.khichdiinfotech.com/",
     "maintainer": "Khichdi InfoTech",
     "license": "LGPL-3",
-    "price": 0.0,
-    "currency": "EUR",
     "depends": ["point_of_sale"],
     "data": [
         "views/pos_config_views.xml",
