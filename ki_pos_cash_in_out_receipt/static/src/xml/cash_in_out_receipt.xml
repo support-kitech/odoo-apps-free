@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ki_pos_cash_in_out_receipt.CashInOutSuccess">
+        <Dialog title.translate="Cash In/Out Transaction">
+            <div>
+                <span>You have successfully made the transaction.</span>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-secondary btn-lg lh-lg o-default-button" t-on-click="close">Close</button>
+            </t>
+        </Dialog>
+    </t>
+
+    <t t-name="ki_pos_cash_in_out_receipt.CashInOutReceiptWidget">
+        <div class="pos-receipt p-2">
+            <ReceiptHeader order="props.data.order"/>
+            <t t-set="data" t-value="props.data"/>
+            <div class="pos-receipt-container">
+                <div>
+                    <span class="float-left">Cash In/Out</span>
+                    <span t-esc="data.translatedType" class="pos-receipt-right-align"/>
+                </div>
+                <div>
+                    <span class="float-left">Amount</span>
+                    <span t-esc="data.formattedAmountSymbol" class="pos-receipt-right-align"/>
+                </div>
+                <div>
+                    <span class="float-left">Reason</span>
+                    <span t-esc="data.reason" class="pos-receipt-right-align"/>
+                </div>
+                <div>
+                    <span class="float-left">Date</span>
+                    <span t-esc="data.date" class="pos-receipt-right-align"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

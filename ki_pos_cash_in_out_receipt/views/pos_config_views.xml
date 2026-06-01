@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pos_payment_method_form_cash_in_out" model="ir.ui.view">
+        <field name="name">pos.payment.method.form.cash.in.out</field>
+        <field name="model">pos.payment.method</field>
+        <field name="inherit_id" ref="point_of_sale.pos_payment_method_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='journal_id']" position="after">
+                <field name="cash_in_out"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_pos_config_form_cash_currency" model="ir.ui.view">
+        <field name="name">pos.config.form.cash.currency</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='other_devices']" position="after">
+                <setting string="Cash In/Out Multi Currency">
+                    <div class="content-group">
+                        <label for="cash_currency_ids" string="Allowed Cash Currencies"/>
+                        <field name="cash_currency_ids" widget="many2many_tags"/>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
