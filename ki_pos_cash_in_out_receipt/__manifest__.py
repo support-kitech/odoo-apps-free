@@ -21,8 +21,6 @@ This free module adds focused Point of Sale enhancements for Odoo 19:
     "website": "https://www.khichdiinfotech.com/",
     "maintainer": "Khichdi InfoTech",
     "license": "LGPL-3",
-    "price": 0.0,
-    "currency": "EUR",
     "depends": ["point_of_sale"],
     "data": [
         "views/pos_config_views.xml",
